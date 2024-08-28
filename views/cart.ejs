@@ -1,0 +1,111 @@
+<%- include('./layouts/header.ejs') %>
+
+<section id="shop-banner" class="about-banner">
+  <h2>#Let's_talk</h2>
+  <p>Leave a message, we love you here from you</p>
+</section>
+<section id="cart" class="section-p1">
+  <table>
+    <thead>
+      <tr>
+        <td>Remove</td>
+        <td>Image</td>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Subtotle</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% cartItems.forEach(function(elem){%>
+      <tr>
+        <td>
+          <a href="/delete_icon/<%=elem._id%>"
+            ><i class="far fa-times-circle"></i
+          ></a>
+        </td>
+        <td>
+          <img
+            src="/images/products_images/<%=elem.productId.image[0]%>"
+            alt=""
+          />
+        </td>
+        <td><%=elem.productId.title%></td>
+        <td>Rs <span class="price"><%=elem.productId.price%></span></td>
+        <td>
+          <input
+            type="number"
+            min="0"
+            value="<%=elem.productQuantity%>"
+            class="in-price"
+            onchange="updateCart('<%= elem.productId._id %>', this.value)"
+          />
+        </td>
+        <td class="sprice">118.19</td>
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
+</section>
+
+<section id="cart-add" class="section-p1">
+  <div id="coupon">
+    <h3>Apply Coupon</h3>
+    <div>
+      <input type="text" placeholder="Enter your coupon" />
+      <button class="normal">Apply</button>
+    </div>
+  </div>
+  <div id="subtotal">
+    <h3>Cart totals</h3>
+    <table>
+      <tr>
+        <td>Cart Subtotle</td>
+        <td>Rs <span class="cst">0</span></td>
+      </tr>
+      <tr>
+        <td>Shipping Fee</td>
+        <td>Rs <span class="sfee">3</span></td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td>
+          <strong>Rs <span class="total">335</span></strong>
+        </td>
+      </tr>
+    </table>
+    <form action="/address" method="get">
+      <button type="submit" class="normal">Proceed to checkout</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  async function updateCart(productId, newQuantity) {
+    if (newQuantity < 1) {
+        newQuantity = 1;
+      }
+    try {
+      const response = await fetch(`/cart/update/${productId}`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ newQuantity }),
+      });
+
+      if (response.ok) {
+        // Handle successful update, e.g., refresh the page
+        location.reload();
+      } else {
+        // Handle error response
+        console.error("Failed to update cart");
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error("Error updating cart:", error);
+    }
+  }
+</script>
+
+<%- include('./layouts/footer.ejs') %>

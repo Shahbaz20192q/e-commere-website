@@ -1,0 +1,64 @@
+<%- include('../layouts/header.ejs') %>
+
+<style>
+  .blog-wrepper{
+    width:  100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  
+  .blog-wrepper h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .blog-wrepper h2{
+    font-size: 30px;
+  }
+  .blog-wrepper img{
+    width: 95vw;
+    height: 95vh;
+  }
+</style>
+
+<div class="blog-wrepper">
+  <h1><%=blogs.blogTitle%></h1>
+  <img
+    height="300px"
+    src="/images/blogs_images/<%=blogs.image%>"
+    alt="Blog Image"
+  />
+  <p><%=blogs.intro%></p>
+
+  <h2><%=blogs.blogSubTitle1%></h2>
+  <p><%=blogs.para1%></p>
+
+  <h2><%=blogs.blogSubTitle2%></h2>
+  <p><%=blogs.para2%></p>
+
+  <h2><%=blogs.blogSubTitle3%></h2>
+  <p><%=blogs.para3%></p>
+
+  <h2><%=blogs.blogSubTitle4%></h2>
+  <p><%=blogs.para4%></p>
+
+  <h2><%=blogs.blogSubTitle5%></h2>
+  <p><%=blogs.para5%></p>
+
+  <h2><%=blogs.blogSubTitle6%></h2>
+  <p><%=blogs.para6%></p>
+
+  <h2><%=blogs.blogSubTitle7%></h2>
+  <p><%=blogs.para7%></p>
+
+  <h2><%=blogs.blogSubTitle8%></h2>
+  <p><%=blogs.para8%></p>
+
+  <h2><%=blogs.blogSubTitle9%></h2>
+  <p><%=blogs.para9%></p>
+
+  <h2><%=blogs.blogSubTitle10%></h2>
+  <p><%=blogs.para10%></p>
+</div>
+<%- include('../layouts/footer.ejs') %>

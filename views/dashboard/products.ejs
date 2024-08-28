@@ -1,0 +1,29 @@
+<%- include('./dashboardLayout/header.ejs') %>
+
+<pre>
+  <!-- <%=products%> -->
+</pre>
+<a class="add-product" href="/dashboard/products/add">Add Product</a>
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Brand</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(function(elem){ %>
+      <tr>
+        <td><img src="/images/products_images/<%=elem.image[0]%>" alt="product Image"></td>
+        <td><%=elem.title%></td>
+        <td><%=elem.price%></td>
+        <td><%=elem.brand%></td>
+        <td><a href="/dashboard/products/edit/<%=elem._id%>">Edit</a></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include('./dashboardLayout/footer.ejs') %>

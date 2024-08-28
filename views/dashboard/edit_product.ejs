@@ -1,0 +1,68 @@
+<%- include('./dashboardLayout/header.ejs') %>
+
+<pre>
+    <!-- <%=product%> -->
+</pre>
+
+<div>
+  <h1>Edit Product</h1>
+  <form
+    action="/dashboard/product/edit/<%=product._id%>"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input type="file" name="image" multiple /> <br />
+    <br />
+    <input
+      type="text"
+      name="title"
+      placeholder="Title"
+      value="<%=product.title%>"
+    />
+    <br />
+    <br />
+    <input
+      type="text"
+      name="brand"
+      placeholder="Brand Name"
+      value="<%=product.brand%>"
+    />
+    <br />
+    <br />
+    <input
+      type="text"
+      name="description"
+      placeholder="Description"
+      value="<%=product.description%>"
+    />
+    <br />
+    <br />
+    <input
+      type="number"
+      name="price"
+      placeholder="price"
+      value="<%=product.price%>"
+    />
+    <br />
+    <br />
+    <input
+      type="number"
+      name="cprice"
+      placeholder="Compair Price"
+      value="<%=product.cprice%>"
+    />
+    <br />
+    <br />
+    <input
+      type="number"
+      name="stockQuantity"
+      placeholder="Stock Quantity"
+      value="<%=product.stockQuantity%>"
+    />
+    <br />
+    <br />
+    <input type="submit" /> <span> <a href="/dashboard/product/delete/<%=product._id%>">Delete Product</a></span> <br /> 
+    <br />
+  </form>
+</div>
+<%- include('./dashboardLayout/footer.ejs') %>

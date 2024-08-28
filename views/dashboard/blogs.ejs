@@ -1,0 +1,31 @@
+<%- include('./dashboardLayout/header.ejs') %>
+<style>
+td{
+  padding: 10px;
+}
+</style>
+<div>
+  <h1>Blogs</h1>
+  <a class="add-product" href="/dashboard/blog/add">Add Blog</a>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% blogs.forEach(function(elem){ %>
+        <tr>
+          <td><img src="/images/blogs_images/<%=elem.image%>" alt="product Image"></td>
+          <td><%=elem.title%></td>
+          <td><%=elem.description%></td>
+          <td><a href="/dashboard/blog/edit/<%=elem._id%>">Edit</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%- include('./dashboardLayout/footer.ejs') %>

@@ -1,0 +1,70 @@
+<%- include('./layouts/header.ejs') %>
+<section id="shop-banner" class="about-banner">
+  <h2>#Let's_talk</h2>
+  <p>Leave a message, we love you here from you</p>
+</section>
+
+<section id="form-detail">
+  <form action="/contact_form" method="post">
+    <span>Leave a message</span>
+    <h2>we love you here from you</h2>
+    <input type="text" name="name" placeholder="Your Sweet Name" />
+    <input type="text" name="email" placeholder="Your E-mail" />
+    <input type="text" name="subject" placeholder="Your Subject" />
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      cols="30"
+      style="height: 160px"
+    ></textarea>
+    <button type="submit" class="normal">Submit</button>
+  </form>
+  <div class="people">
+    <div>
+      <img src="/images/img/people/1.png" alt="" />
+      <p>Name<br />Skil/work<br />E-mail</p>
+    </div>
+    <div>
+      <img src="/images/img/people/2.png" alt="" />
+      <p>Name<br />Skil/work<br />E-mail</p>
+    </div>
+    <div>
+      <img src="/images/img/people/3.png" alt="" />
+      <p>Name<br />Skil/work<br />E-mail</p>
+    </div>
+  </div>
+</section>
+
+<section id="Contect-detail" class="">
+  <div class="details">
+    <span> Get In Touch </span>
+    <h2>Contect Us by chossing on of given method</h2>
+    <div>
+      <li>
+        <i class="far fa-envelope"></i>
+        <p>Contect@Example.com</p>
+      </li>
+      <li>
+        <i class="fas fa-phone-alt"></i>
+        <p>+923XXXXXXXXX</p>
+      </li>
+      <li>
+        <i class="far fa-clock"></i>
+        <p>24/7</p>
+      </li>
+    </div>
+  </div>
+</section>
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Sign Up For Newsletters</h4>
+    <p>
+      Get E-mail updates about our latest shop and <span>special offers</span>
+    </p>
+  </div>
+  <div class="form">
+    <input type="text" placeholder="Your email address" />
+    <button class="normal">Sign Up</button>
+  </div>
+</section>
+<%- include('./layouts/footer.ejs') %>

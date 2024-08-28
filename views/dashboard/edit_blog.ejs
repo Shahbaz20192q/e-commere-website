@@ -1,0 +1,219 @@
+<%- include('./dashboardLayout/header.ejs') %>
+
+<style>
+  .blog-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    /* align-items: center; */
+  }
+
+  .blog-form input {
+    border: 1px solid;
+    outline: none;
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  .blog-form .small-input {
+    height: 30px;
+  }
+
+  .blog-form .big-input {
+    height: 100px;
+  }
+</style>
+
+<div>
+  <form
+    action="/dashboard/blogs/edit/<%=blog._id%>"
+    method="post"
+    enctype="multipart/form-data"
+    class="blog-form"
+  >
+    <input
+      type="text"
+      name="title"
+      placeholder="Page Title"
+      value="<%=blog.title%>"
+      class="small-input"
+    />
+
+    <input type="file" name="image" />
+    <input
+      type="text"
+      name="description"
+      placeholder="Short  Description"
+      value="<%=blog.description%>"
+      class="big-input"
+    />
+
+    <input
+      type="text"
+      name="blogTitle"
+      placeholder="Blog main Title"
+      value="<%=blog.blogTitle%>"
+      class="small-input"
+    />
+    <input
+      type="text"
+      name="intro"
+      placeholder="Introduction"
+      value="<%=blog.intro%>"
+      class="big-input"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle1"
+      class="small-input"
+      placeholder="Blog Sub Title1"
+      value="<%=blog.blogSubTitle1%>"
+    />
+    <input
+      type="text"
+      name="para1"
+      class="big-input"
+      placeholder="Paragraph 1"
+      value="<%=blog.para1%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle2"
+      class="small-input"
+      placeholder="Blog Sub Title2"
+      value="<%=blog.blogSubTitle2%>"
+    />
+    <input
+      type="text"
+      name="para2"
+      class="big-input"
+      placeholder="Paragraph 2"
+      value="<%=blog.para2%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle3"
+      class="small-input"
+      placeholder="Blog Sub Title3"
+      value="<%=blog.blogSubTitle3%>"
+    />
+    <input
+      type="text"
+      name="para3"
+      class="big-input"
+      placeholder="Paragraph 3"
+      value="<%=blog.para3%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle4"
+      class="small-input"
+      placeholder="Blog Sub Title4"
+      value="<%=blog.blogSubTitle4%>"
+    />
+    <input
+      type="text"
+      name="para4"
+      class="big-input"
+      placeholder="Paragraph 4"
+      value="<%=blog.para4%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle5"
+      class="small-input"
+      placeholder="Blog Sub Title5"
+      value="<%=blog.blogSubTitle5%>"
+    />
+    <input
+      type="text"
+      name="para5"
+      class="big-input"
+      placeholder="Paragraph 5"
+      value="<%=blog.para5%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle6"
+      class="small-input"
+      placeholder="Blog Sub Title6"
+      value="<%=blog.blogSubTitle6%>"
+    />
+    <input
+      type="text"
+      name="para6"
+      class="big-input"
+      placeholder="Paragraph 6"
+      value="<%=blog.para6%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle7"
+      class="small-input"
+      placeholder="Blog Sub Title7"
+      value="<%=blog.blogSubTitle7%>"
+    />
+    <input
+      type="text"
+      name="para7"
+      class="big-input"
+      placeholder="Paragraph 7"
+      value="<%=blog.para7%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle8"
+      class="small-input"
+      placeholder="Blog Sub Title8"
+      value="<%=blog.blogSubTitle8%>"
+    />
+    <input
+      type="text"
+      name="para8"
+      class="big-input"
+      placeholder="Paragraph 8"
+      value="<%=blog.para8%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle9"
+      class="small-input"
+      placeholder="Blog Sub Title9"
+      value="<%=blog.blogSubTitle9%>"
+    />
+    <input
+      type="text"
+      name="para9"
+      class="big-input"
+      placeholder="Paragraph 9"
+      value="<%=blog.para9%>"
+    />
+
+    <input
+      type="text"
+      name="blogSubTitle10"
+      class="small-input"
+      placeholder="Blog Sub Title10"
+      value="<%=blog.blogSubTitle10%>"
+    />
+    <input
+      type="text"
+      name="para10"
+      class="big-input"
+      placeholder="Paragraph 10"
+      value="<%=blog.para10%>"
+    />
+    <input type="submit" />
+  </form>
+</div>
+<%- include('./dashboardLayout/footer.ejs') %>

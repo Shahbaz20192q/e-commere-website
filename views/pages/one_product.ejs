@@ -1,0 +1,206 @@
+<%- include('../layouts/header.ejs') %>
+<section id="pro-details" class="section-p1">
+  <div class="single-pro-img">
+    <img
+      src="/images/products_images/<%=product.image[0]%> "
+      alt="T-Shirt img"
+      width="100%"
+      id="mainImg"
+    />
+
+    <div class="small-img-group">
+      <div class="small-img-col">
+        <img
+          src="/images/products_images/<%=product.image[0]%>"
+          alt="T-Shirt img"
+          width="100%"
+          class="small-img"
+        />
+      </div>
+      <div class="small-img-col">
+        <img
+          src="/images/products_images/<%=product.image[1]%>"
+          alt="T-Shirt img"
+          width="100%"
+          class="small-img"
+        />
+      </div>
+      <div class="small-img-col">
+        <img
+          src="/images/products_images/<%=product.image[2]%>"
+          alt="T-Shirt img"
+          width="100%"
+          class="small-img"
+        />
+      </div>
+      <div class="small-img-col">
+        <img
+          src="/images/products_images/<%=product.image[3]%>"
+          alt="T-Shirt img"
+          width="100%"
+          class="small-img"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="single-pro-details">
+    <!-- <h6>Home/T-Shirt</h6> -->
+    <h4><%=product.title%></h4>
+    <h2>
+      Rs <%=product.price%>
+      <span style="text-decoration: line-through; font-size: medium"
+        ><%=product.cprice%></span
+      >
+    </h2>
+    <!-- <select>
+        <option>select Size</option>
+        <option>XL</option>
+        <option>XXL</option>
+        <option>small</option>
+        <option>Large</option>
+      </select> -->
+
+    <form action="/cart/add/<%= product._id %>" method="post" id="cart-form">
+      <input
+        id="cartquantity"
+        type="number"
+        name="cartQuantity"
+        value="<%= product.cartQuantity %>"
+        oninput="updateCart(this.value)"
+        min="1"
+      />
+      <button type="button" class="normal" onclick="resetQuantity()">
+        Reset to 1
+      </button>
+      <button type="submit" class="normal">Add to Cart</button>
+    </form>
+    <h4>product details</h4>
+    <span> <%=product.description%> </span>
+  </div>
+</section>
+<section id="product1" class="section-p1">
+  <h2>Featured Products</h2>
+  <p>Summer Collection New Morden Design</p>
+  <div class="pro-container">
+    <div class="pro">
+      <img src="../img/products/n1.jpg" alt="Product's Img" />
+      <div class="des">
+        <span>adidas</span>
+        <h5>Cartoon Astronaut T-Shirts</h5>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$78</h4>
+      </div>
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+
+    <div class="pro">
+      <img src="../img/products/n2.jpg" alt="Product's Img" />
+      <div class="des">
+        <span>adidas</span>
+        <h5>Cartoon Astronaut T-Shirts</h5>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$78</h4>
+      </div>
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+
+    <div class="pro">
+      <img src="../img/products/n3.jpg" alt="Product's Img" />
+      <div class="des">
+        <span>adidas</span>
+        <h5>Cartoon Astronaut T-Shirts</h5>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$78</h4>
+      </div>
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+
+    <div class="pro">
+      <img src="../img/products/n4.jpg" alt="Product's Img" />
+      <div class="des">
+        <span>adidas</span>
+        <h5>Cartoon Astronaut T-Shirts</h5>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$78</h4>
+      </div>
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews section-p1" id="reviews">
+  <form action="/shop/<%=product.id%>/review" method="post" id="cform">
+    <div class="inputs-div">
+      <input
+        type="text"
+        name="comment"
+        placeholder="Enter your comment"
+        id="comment-input"
+        required
+      />
+      <input type="submit" />
+    </div>
+  </form>
+
+  <% product.reviews.reverse().forEach(function(elem){ %>
+  <div class="review-container">
+    <p><%=elem.username%></p>
+    <p><%=elem.comment%></p>
+  </div>
+  <% }) %>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Sign Up For Newsletters</h4>
+    <p>
+      Get E-mail updates about our latest shop and
+      <span>special offers</span>
+    </p>
+  </div>
+  <div class="form">
+    <input type="text" placeholder="Your email address" />
+    <button class="normal">Sign Up</button>
+  </div>
+</section>
+
+<script>
+  function updateCart(newQuantity) {
+    // Set the input value to 1 if the new quantity is less than 1
+    if (newQuantity < 1) {
+      newQuantity = 1;
+    }
+
+    document.getElementById("cartquantity").value = newQuantity;
+  }
+
+  function resetQuantity() {
+    document.getElementById("cartquantity").value = 1;
+  }
+</script>
+
+<%- include('../layouts/footer.ejs') %>

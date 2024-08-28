@@ -1,0 +1,28 @@
+<%- include('./dashboardLayout/header.ejs') %>
+<div>
+  <h1>Products</h1>
+  <form
+    action="/dashboard/products"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input type="file" name="image" multiple /> <br />
+    <br />
+    <input type="text" name="title" placeholder="Title" /> <br />
+    <br />
+    <input type="text" name="brand" placeholder="Brand Name" /> <br />
+    <br />
+    <input type="text" name="description" placeholder="Description" /> <br />
+    <br />
+    <input type="number" name="price" placeholder="price" /> <br />
+    <br />
+    <input type="number" name="cprice" placeholder="Compair Price" /> <br />
+    <br />
+    <input type="number" name="stockQuantity" placeholder="Stock Quantity" />
+    <br />
+    <br />
+    <input type="submit" /> <br />
+    <br />
+  </form>
+</div>
+<%- include('./dashboardLayout/footer.ejs') %>

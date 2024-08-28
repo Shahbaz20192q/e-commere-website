@@ -1,0 +1,62 @@
+<%- include('./layouts/header.ejs') %>
+
+<section id="shop-banner">
+  <h2>#Stayhome</h2>
+  <p>Save more with coupons & up to 70% off!</p>
+</section>
+
+<section id="product1" class="section-p1">
+  <!-- onclick="window.location.href='pages/sproduct.html'" -->
+  <div class="pro-container">
+    <% for (let i = 0; i < products.length; i++) { %>
+    <div
+      class="pro"
+      onclick="window.location.href='/shop/<%=products[i]._id%>'"
+    >
+      <img
+        src="/images/products_images/<%=products[i].image[0]%>"
+        alt="Product's Img"
+      />
+      <div class="des">
+        <span><%=products[i].brand%></span>
+        <h5><%=products[i].title%></h5>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>
+          Rs <%=products[i].price%>
+          <span style="text-decoration: line-through"
+            >Rs <%=products[i].cprice%></span
+          >
+        </h4>
+      </div>
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <pre></pre>
+    <% } %>
+  </div>
+</section>
+
+<section id="numbers">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Sign Up For Newsletters</h4>
+    <p>
+      Get E-mail updates about our latest shop and <span>special offers</span>
+    </p>
+  </div>
+  <div class="form">
+    <input type="text" placeholder="Your email address" />
+    <button class="normal">Sign Up</button>
+  </div>
+</section>
+<%- include('./layouts/footer.ejs') %>

@@ -1,0 +1,43 @@
+<%- include('./layouts/header.ejs') %>
+
+<section id="shop-banner" class="blog-banner">
+  <h2>#redmore</h2>
+  <p>Red more abuout our products</p>
+</section>
+
+<section id="blog">
+  <% for (let i = blogs.length - 1; i >= 0; i--) { %>
+  <div class="blog-box">
+    <div class="img-box">
+      <img src="/images/blogs_images/<%=blogs[i].image%>" alt="" />
+    </div>
+    <div class="blog-details">
+      <h4><%=blogs[i].blogTitle%></h4>
+      <p>
+        <%=blogs[i].description%>
+      </p>
+      <a href="/blog/<%=blogs[i]._id%>">Read More</a>
+    </div>
+  </div>
+  <% }%>
+</section>
+
+<section id="numbers">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Sign Up For Newsletters</h4>
+    <p>
+      Get E-mail updates about our latest shop and <span>special offers</span>
+    </p>
+  </div>
+  <div class="form">
+    <input type="text" placeholder="Your email address" />
+    <button class="normal">Sign Up</button>
+  </div>
+</section>
+<%- include('./layouts/footer.ejs') %>
